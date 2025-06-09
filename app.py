@@ -11,7 +11,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Cargar modelo ya entrenado.
-with open('models/modelo_iris.pkl', 'rb') as f:
+with open('modelo_iris.pkl', 'rb') as f:
     model = pickle.load(f)
 
 #En Flask, @app.route('/') asocia una URL con una función de Python. Es decir:
