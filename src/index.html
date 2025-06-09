@@ -1,0 +1,42 @@
+<!-- Indica que el documento es un HTML5. -->
+<!DOCTYPE html>
+
+<!-- Inicia el documento HTML y especifica que el idioma es español (lang="es"). -->
+<html lang="es">
+
+
+<!-- Contiene metadatos sobre el documento:  "UTF-8" para soportar tildes, etc. y el titulo  -->
+<head>
+    <meta charset="UTF-8">
+    <title>Predicción Iris</title>
+</head>
+
+<!-- Contiene el contenido visible de la página: 
+Es un formulario HTML que enviará los datos a la ruta /predict del backend (probablemente Flask).
+method="post": Envía los datos usando el método HTTP POST. -->
+
+<body>
+    <h1>Predicción de tipo de flor Iris 🌷 </h1>
+    <form action="/predict" method="post">
+        
+        <label>Sepal length (cm):</label><br>
+        <input type="number" step="any" name="sepal length (cm)" required><br><br>
+        
+        <label>Sepal width (cm):</label><br>
+        <input type="number" step="any" name="sepal width (cm)" required><br><br>
+        
+        <label>Petal length (cm):</label><br>
+        <input type="number" step="any" name="petal length (cm)" required><br><br>
+        
+        <label>Petal width (cm):</label><br>
+        <input type="number" step="any" name="petal width (cm)" required><br><br>
+        
+        <input type="submit" value="Predecir">
+    </form>
+
+    
+    <!-- de: return render_template('index.html', prediction_text=f'La flor es: {labels[output]}'), de: app.py  -->
+    <h2>{{ prediction_text }}</h2>
+</body>
+
+</html>
